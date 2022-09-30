@@ -10,15 +10,23 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var viewModel = PersonnageViewModel()
-    @State var results: [Results] = []
+    @State var response: Response?
     
     var body: some View {
         NavigationView {
+            List {
+                ForEach(viewModel.results, id:\.self) { res in
+                    Text(res.name)
+                    
+                }
+            }
            
         }
         .navigationTitle("Ricky & Mortimeer")
         .onAppear {
-            print(viewModel.fetch())
+            print("on Appear")
+            viewModel.fetch()
+            print(viewModel.results)
             
         }
     }

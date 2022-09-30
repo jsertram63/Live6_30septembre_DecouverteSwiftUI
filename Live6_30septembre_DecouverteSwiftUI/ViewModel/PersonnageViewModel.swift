@@ -11,30 +11,42 @@ import SwiftUI
 
 class PersonnageViewModel : ObservableObject {
     
-    //@Published var results : [Results] = []
-    @Published var results = [Results]()
+    @Published var results : [Results] = []
+    //@Published var results : Results?
+    @Published var responseData: Response?
     
-    func fetch() {
-    
-        guard let url = URL(string:"https://rickandmortyapi.com/api/character/") else {
+    func fetch(){
+        print("fetch")
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character/") else {
             return
         }
-        
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, response, error in
-        if let data = data {
-            print(data)
-        if let response = try? JSONDecoder().decode([Results].self, from: data) {
-    
-        DispatchQueue.main.async {
-        self.results = response
-            print(self.results)
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data else {
+                return
+            }
+            do {
+                // si récupération de données - décodage de notre JSON
+                let persoFeed = try JSONDecoder().decode(Response.self, from: data)
+                //print("json resultat : \(persoFeed)")
+                DispatchQueue.main.async {
+                    self?.responseData = persoFeed
+                    print(self?.responseData?.results)
+                    self?.results = (self?.responseData?.results)!
+                }
+              
+                
+                
             
+                
+               
+                
+            }catch {
+                print(error)
+                
+                
+            }
         }
-        return
-        }
-        }
-        }.resume()
+        task.resume()
     }
     
 }
