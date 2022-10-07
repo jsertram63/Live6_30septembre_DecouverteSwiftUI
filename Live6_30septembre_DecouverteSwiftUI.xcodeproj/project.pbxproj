@@ -13,6 +13,7 @@
 		89F60F6428E6E69B0045BE82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89F60F6328E6E69B0045BE82 /* Preview Assets.xcassets */; };
 		89F60F6C28E6E7540045BE82 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F60F6B28E6E7540045BE82 /* Data.swift */; };
 		89F60F6F28E6EADF0045BE82 /* PersonnageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F60F6E28E6EADF0045BE82 /* PersonnageViewModel.swift */; };
+		89F78D1A28F02E4500EC6EBA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F78D1928F02E4500EC6EBA /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		89F60F6328E6E69B0045BE82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89F60F6B28E6E7540045BE82 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		89F60F6E28E6EADF0045BE82 /* PersonnageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnageViewModel.swift; sourceTree = "<group>"; };
+		89F78D1928F02E4500EC6EBA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				89F60F6A28E6E7200045BE82 /* Model */,
 				89F60F5C28E6E6990045BE82 /* Live6_30septembre_DecouverteSwiftUIApp.swift */,
 				89F60F5E28E6E6990045BE82 /* ContentView.swift */,
+				89F78D1928F02E4500EC6EBA /* DetailView.swift */,
 				89F60F6028E6E69B0045BE82 /* Assets.xcassets */,
 				89F60F6228E6E69B0045BE82 /* Preview Content */,
 			);
@@ -162,6 +165,7 @@
 				89F60F5F28E6E6990045BE82 /* ContentView.swift in Sources */,
 				89F60F6C28E6E7540045BE82 /* Data.swift in Sources */,
 				89F60F6F28E6EADF0045BE82 /* PersonnageViewModel.swift in Sources */,
+				89F78D1A28F02E4500EC6EBA /* DetailView.swift in Sources */,
 				89F60F5D28E6E6990045BE82 /* Live6_30septembre_DecouverteSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

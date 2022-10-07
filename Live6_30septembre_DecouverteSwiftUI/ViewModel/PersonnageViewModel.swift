@@ -11,7 +11,7 @@ import SwiftUI
 
 class PersonnageViewModel : ObservableObject {
     
-    @Published var results : [Results] = []
+    @Published var results : [Results] = [] // <----- tableau de personnage 
     //@Published var results : Results?
     @Published var responseData: Response?
     
@@ -30,19 +30,10 @@ class PersonnageViewModel : ObservableObject {
                 //print("json resultat : \(persoFeed)")
                 DispatchQueue.main.async {
                     self?.responseData = persoFeed
-                    print(self?.responseData?.results)
                     self?.results = (self?.responseData?.results)!
                 }
-              
-                
-                
-            
-                
-               
-                
             }catch {
                 print(error)
-                
                 
             }
         }

@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct Live6_30septembre_DecouverteSwiftUIApp: App {
+    
+    // StateObject
+    //@StateObject private var viewModel = PersonnageViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+            // environementObject
+                .environmentObject(PersonnageViewModel())
+                
         }
     }
 }

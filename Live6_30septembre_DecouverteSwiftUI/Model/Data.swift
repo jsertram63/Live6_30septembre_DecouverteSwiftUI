@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Response: Codable {
+struct Response: Decodable {
     let results: [Results]?
 }
 
 
-struct Results: Hashable,Codable, Identifiable {
+struct Results:Decodable, Identifiable {
   let id: Int
   let name: String
   let status: String
@@ -20,8 +20,18 @@ struct Results: Hashable,Codable, Identifiable {
   let type: String
   let gender: String
   let image: String
+  let location: Lieu
 
 }
+
+
+struct Lieu: Decodable {
+    let name:String
+    let url:String
+}
+
+
+
 
 
 
