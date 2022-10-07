@@ -2,22 +2,18 @@
 //  DetailView.swift
 //  Live6_30septembre_DecouverteSwiftUI
 //
-//  Created by Lunack on 07/10/2022.
+//  Created by Dylan Caetano on 07/10/2022.
 //
 
 import SwiftUI
 
 struct DetailView: View {
     
-    
-    @EnvironmentObject var personnageVm : PersonnageViewModel
+    @EnvironmentObject var personnageVm: PersonnageViewModel
     var results: Results
     
-    
-    
     var body: some View {
-        ZStack
-        {
+        ZStack {
             Color.brown.opacity(0.5)
                 .ignoresSafeArea()
             ZStack {
@@ -29,7 +25,7 @@ struct DetailView: View {
                         VStack {
                             AsyncImage(url:URL(string: results.image)) { img in
                                 img.resizable()
-                                    //.aspectRatio(contentMode: .fit)
+                                //.aspectRatio(contentMode: .fit)
                                     .clipped()
                                     .frame(width: 250, height: 250)
                                     .clipShape(Circle())
@@ -51,8 +47,14 @@ struct DetailView: View {
                     }
                 }
             }
-            
         }
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailView(results: PersonnageViewModel().results[0])
+            .environmentObject(PersonnageViewModel())
     }
 }
 

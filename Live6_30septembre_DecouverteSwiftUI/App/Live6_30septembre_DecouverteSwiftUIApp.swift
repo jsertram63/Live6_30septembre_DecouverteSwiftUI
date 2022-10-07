@@ -15,7 +15,7 @@ struct Live6_30septembre_DecouverteSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView()
             // environementObject
                 .environmentObject(PersonnageViewModel())
                 

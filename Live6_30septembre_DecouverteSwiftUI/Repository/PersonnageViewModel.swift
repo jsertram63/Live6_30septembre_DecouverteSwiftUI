@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 
 class PersonnageViewModel : ObservableObject {

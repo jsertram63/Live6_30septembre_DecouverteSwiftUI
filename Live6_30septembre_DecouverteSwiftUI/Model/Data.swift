@@ -12,7 +12,7 @@ struct Response: Decodable {
 }
 
 
-struct Results:Decodable, Identifiable {
+struct Results: Decodable, Identifiable {
   let id: Int
   let name: String
   let status: String
@@ -24,10 +24,9 @@ struct Results:Decodable, Identifiable {
 
 }
 
-
 struct Lieu: Decodable {
-    let name:String
-    let url:String
+    let name: String
+    let url: String
 }
 
 
