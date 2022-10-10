@@ -14,48 +14,40 @@ struct DetailView: View {
     
     var body: some View {
         ZStack {
-            Color.brown.opacity(0.5)
-                .ignoresSafeArea()
-            ZStack {
+            Color.gradient.opacity(0.28).ignoresSafeArea()
+            
+            ScrollView {
                 VStack {
-                    Divider()
-                        .background(Color.green.opacity(0.25))
-                    ScrollView{
-                        
-                        VStack {
-                            AsyncImage(url:URL(string: results.image)) { img in
-                                img.resizable()
-                                //.aspectRatio(contentMode: .fit)
-                                    .clipped()
-                                    .frame(width: 250, height: 250)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(.gray.opacity(0.5),lineWidth: 5))
-                                    .shadow( radius: 5)
-                                
-                            }
-                        placeholder: {
-                            
-                            ProgressView()
-                        }
-                            VStack(spacing: 25) {
-                                Text(results.name)
-                                    .font(.title)
-                                    .padding(.top)
-                            }
-                            
-                        }.padding()
+                    AsyncImage(url:URL(string: results.image)) { img in
+                        img
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 250, height: 300)
+                            .cornerRadius(8)
+                            .clipped()
+                            .shadow(radius: 3)
+                    } placeholder: {
+                        ProgressView()
                     }
                 }
+                VStack {
+                    Text(results.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text(results.gender)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                }
+                .padding(.top, 16)
             }
         }
     }
 }
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(results: PersonnageViewModel().results[0])
-            .environmentObject(PersonnageViewModel())
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailView(results: PersonnageViewModel().results[0])
+//            .environmentObject(PersonnageViewModel())
+//    }
+//}
 
 

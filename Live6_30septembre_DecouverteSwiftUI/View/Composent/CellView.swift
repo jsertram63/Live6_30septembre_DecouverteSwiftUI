@@ -45,17 +45,18 @@ struct CellView: View {
     }
 }
 
-struct CellView_Previews: PreviewProvider {
-    
-    
-//    static let viewModel = CellViewModel(
-//        image:"Rick",
-//        name: "Rick",
-//        lieu: "Citadel"
-//    )
-    
-    static var previews: some View {
-        CellView(viewModel: PersonnageViewModel().results[0])
-            .environmentObject(PersonnageViewModel())
-    }
-}
+/*struct CellView_Previews: PreviewProvider {
+ 
+ 
+     static let viewModel = CellViewModel(
+         image:"Rick",
+         name: "Rick",
+         lieu: "Citadel"
+ )
+ 
+ static var previews: some View {
+ CellView(viewModel: PersonnageViewModel().results[0])
+ .environmentObject(PersonnageViewModel())
+ }
+ }
+ */
